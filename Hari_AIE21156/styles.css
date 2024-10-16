@@ -1,0 +1,585 @@
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    height: 30vw; /* 1440/2560 = 0.5625, maintaining 16:9 aspect ratio */
+    max-height: 420px; /* Set a maximum height to prevent excessive height on very large screens */
+    position: relative; /* Use relative positioning for proper layout */
+    overflow: hidden; /* Hide the overflow to ensure the image fits well */
+}
+
+/* Styling specifically for the header image */
+header img {
+    position: absolute;
+    image-rendering: -webkit-optimize-contrast; /* for Chrome/Safari */
+    filter: contrast(150%) brightness(95%);
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Make the image cover the full width */
+    height: auto; /* Ensure the image maintains aspect ratio */
+    transform: translate(-50%, -50%); /* Center the image */
+    object-fit: cover; /* This ensures the image covers the header area */
+}
+
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Fallback to Arial or sans-serif */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+p {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.18rem;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 30px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 60px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    background-color: #fff;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Grid Layout for Games */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px;
+}
+
+/* Game card styling */
+.game-card {
+    position: relative;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure description fits well inside the card */
+    object-fit: cover;
+}
+
+/* Styling for the game card images */
+.game-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Styling for the game card titles */
+.game-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Styling for game descriptions similar to tournaments */
+.game-card p {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 0 0 8px 8px;
+    font-size: 1rem;
+}
+
+/* Show description on hover */
+.game-card:hover p {
+    display: block;
+}
+
+/* Hover effect to slightly enlarge the game card */
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet-size screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+/* Grid Layout for Teams */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Team card styling (similar to game cards) */
+.team-card {
+    position: relative;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.team-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.team-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hover effect */
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+.submit-button{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.30rem;
+    box-sizing: border-box;
+    padding: 1rem 2rem; 
+    align-self: center;
+}
+
+.contact-content{
+    max-width: 50%;
+}
+
+.contact-form {
+    padding: 5px; /* Add padding for better visual spacing */
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.7); /* Add a glow effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition on hover */
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.25rem;
+}
+
+.contact-form:hover {
+    box-shadow: 0 0 20px rgb(199, 30, 30); /* Intensify the glow on hover */
+
+}
+
+/* Grid Layout for Tournaments */
+.tournament-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tournament-card {
+    position: relative;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tournament-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+/* Hidden description initially */
+.tournament-card .description {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Show description on hover */
+.tournament-card:hover .description {
+    display: block;
+}
+
+.tournament-card:hover {
+    transform: scale(1.0);
+}
+
+/* Grid Layout for Tournaments */
+.tournaments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Tournament card styling (similar to game/team cards) */
+.tournaments-card {
+    position: relative;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tournaments-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tournaments-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.tournaments-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hover effect */
+.tournaments-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .tournaments-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .tournaments-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+/* Grid Layout for Gear */
+.gear-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Gear card styling (same as for game/team cards) */
+.gear-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gear-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.gear-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.gear-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hover effect */
+.gear-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .gear-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .gear-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+/* Grid Layout for Discussion Topics */
+.discussion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Discussion card styling */
+.discussion-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.discussion-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.discussion-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hover effect */
+.discussion-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .discussion-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .discussion-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+/* Grid Layout for Career Cards */
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Career card styling */
+.career-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.career-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.career-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.career-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hover effect */
+.career-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .career-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .career-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+/* Blog Grid Layout */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Blog card styling */
+.blog-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.blog-card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.blog-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hover effect */
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .blog-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+}
+
+.getting-started{
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.18rem;    
+}
+
+/* Styling for regular images (not header) */
+img.normal-image {
+    max-width: 50%;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    display: block;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.15em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
